@@ -36,4 +36,45 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+'''
+#8th Aug - Rebrushed the basics - Variables & data types
+'''def test():
+	print("test")
+
+	string = "string"
+	number = 10
+
+
+test()
+
+x= 1+2 + 3
+
+print(x)
+
+#https://docs.python.org/3/
+#https://peps.python.org/pep-0008/
+
+name="neut"
+print(name)
+name_length= 4 
+print(name_length)
+
+name, name_length="neut", 4
+
+print(type(name))
+print(type(name_length))
+
+
+this_list=["ubuntu","linux","windows"]
+this_tuple=("jack","jill")
+this_dictionary={"keyboard":3, "pcs":5}
+
+name_bytes=b"neut"
+print(type(name_bytes))
+
+print(this_list)
+print(this_tuple)
+print(this_dictionary)
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 '''
