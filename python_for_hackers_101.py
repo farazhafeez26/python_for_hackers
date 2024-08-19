@@ -1,3 +1,40 @@
+#19th Aug 
+'''
+string= "am  a string!"
+string2 = "I am \" \n m  a string"
+
+
+print(string2)
+print ("neut" in string2)
+
+print(string2.startswith("I"))
+print(string2.endswith("g"))
+print(string2.split())
+
+print (string2.encode())
+print(string2.encode("utf-8"))
+
+print(string2.rjust(25)) 
+
+print(string2  .rjust(25,"x")) 
+
+print("string2 is {} characters long!".format(len(string2)))
+
+print("{} {}".format(1,2))
+print("{} {}".format("a","b"))
+print("The length is {length}".format(length=len(string2)))
+
+length=len(string2)
+print(f"the new length is {length}")
+print(f"the new length is {length:.2f}")
+print(f"the new length is {length:x}")  # hex
+print(f"the new length is {length:b}")   #binary
+print(f"the new length is {length:o}")     #octal
+
+
+print("string is %d characters long!" % len(string2))     
+
+'''
 
 # the python interpreter in kali linux 
 '''python       
