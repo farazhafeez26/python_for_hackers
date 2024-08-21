@@ -1,3 +1,43 @@
+#21st Aug 
+#bitwise operations
+'''
+print ((10<9)==True)
+print((10==10)==True)
+print(10>9)
+
+
+
+
+print (10/3)
+print(10//3)
+print(10**10) # 10 to the power of 10
+print(10 % 10) # prints the remainder   
+print(10 % 3)
+
+
+x =13 
+print (bin (x))
+print(bin(x)[2:].rjust(8,"0")) #adds zeros 
+
+y= 5  
+print(bin(y))
+print(bin(y)[2:0].rjust(4,"0"))
+
+print("----------")
+print(bin(x & y)[2:].rjust(4,"0")) 
+
+print(x&y)
+
+print(bin(x |y )[2:].rjust(4,"0") )		
+
+print(x | y)
+
+print(bin (x >> 1) [2:].rjust(4,"0"))   #shift 1s to the right side. 
+
+'''
+
+
+
 #19th Aug 
 '''
 string= "am  a string!"
