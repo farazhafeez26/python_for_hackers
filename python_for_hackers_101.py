@@ -1,3 +1,164 @@
+
+
+#26th Aug  - Xcomprehensions, Lambdas, functions
+
+
+print("++++++++++++++++++++++++++++++++++")
+
+#LAMBDAS 
+
+add_4= lambda x : x +4 
+print(add_4(4))
+
+addd =lambda x,y: x+y 
+print(addd(4, 6))
+
+
+
+print((lambda x,y: x*y)(10,4))
+
+
+
+is_even = lambda x: x % 2 ==0
+print(is_even(2))
+print(is_even(3))
+
+
+
+
+blocks=lambda x,y: [x[i:i+y]for i in range(0, len(x),y)]
+
+print(blocks("string",2)) 
+
+
+
+
+to_ord = lambda x : [ord(i) for i in x]
+print(to_ord("ABCD"))   
+
+#nord returns the integer representation of each character. 
+
+
+def to_ord2(x):
+	list1=[]
+	for i in x: 
+		list1.append(ord(i))
+	return list1
+
+print(to_ord2("ABCD"))
+
+
+
+print("++++++++++++++++++++++++++++++++++")
+
+#functions
+
+def function2(s):
+	print("\t{}".format(s))
+
+function2("parameter")
+
+
+
+def function6(s1, *more):   # multiple arguments
+	print("{} {}".format(s1, " ".join([s for s in more])))
+
+function6("function6")
+function6("jack", "ally", "b", "c")
+
+
+#to print a dictionary of arguments
+
+def function7(**ks): 
+	for a in ks: 
+		print(a, ks[a])
+
+function7(a='1', b="2", c="3")		
+
+
+def function8 (s,f,i,l):
+	print(type(s))
+	print(type(f))
+	print(type(i))
+	print(type(l))
+
+
+function8("string",1.0, 1, ['l', 'i'])
+
+
+v=100
+
+def function9(): 
+	global v
+	v+=1 
+	print(v)
+
+function9()
+
+print(v)
+
+#---------------------
+
+#call the function itself
+
+def function12(x):
+	print(x)
+	if  x >0: 
+		function12(x-1)   # recursive output
+
+function12(5)
+
+
+print("++++++++++++++++++++++++++++++++++")
+
+#comprehensions
+list1 = ['a','b','c']
+
+print(list1)
+
+list2= [x for x in list1]
+
+print(list2)
+
+list3 = [x for x in list1 if x  == 'a']
+print(list3)
+
+list5 =[hex(x) for x in range(5)]
+print(list5)
+
+list6= [hex(x) if x >0 else "x" for x in range(5)]
+print(list6)
+
+list7=[ x * x for x in range(5)]
+print(list7)
+
+list8 =[x for x in range(5) if x ==0 or x==1]
+print(list8)
+
+
+list9=[[1,2,3],[4,5,6],[7,8,9]]
+print(list9)
+
+
+list10 = [y for x in list9 for y in x ]
+print(list10)
+
+set1 = {x+x for x in range (5)}
+print(set1)
+
+list11 = [c for c in "string"]
+print(list11)
+
+print("".join(list11))
+print("-".join(list11))
+
+list12=[]
+for c in "string":
+	list12.append(c)
+print(list12) 
+
+
+
 #22nd Aug
 
 #exception error and handling 
