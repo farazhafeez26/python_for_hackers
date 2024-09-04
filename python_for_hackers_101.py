@@ -1,3 +1,78 @@
+#4th Sept - Pwntools 
+from pwn import *
+
+print(cyclic(50))
+print(cyclic_find("laaa"))
+
+print (shellcraft.sh())
+
+print(hexdump(asm(shellcraft.sh())))
+
+
+'''
+
+shellcraft.sh() generates the assembly instructions to spawn a shell, which you can print out as plain text.
+
+asm(shellcraft.sh()) converts the assembly instructions into machine code (the actual binary representation).
+
+hexdump(asm(shellcraft.sh())) prints that machine code in a human-readable hexadecimal format, which is commonly used in binary exploitation to see what will be executed on the target machine.'''
+
+'''
+p=process("/bin/sh")
+p.sendline("echo hello;")
+p.interactive()
+'''
+
+# when connecting to remote processes
+
+'''
+r= remote("127.0.0.1", 1234)
+r.sendline("echo hello there! ;")
+r.interactive()
+#very powerful to connect with remote processes 
+'''
+
+print(p32(0x13371337))
+print(hex(u32(p32(0x13371337))))
+
+
+l=ELF('/bin/bash')
+
+print(hex(l.address))
+print(hex(l.entry))
+
+print(hex(l.got['write']))
+print(hex(l.plt['write']))
+
+for address in l.search(b'/bin/sh\x00'):
+	print(hex(address))
+
+
+print(hex(next(l.search(asm('jmp esp')))))
+
+r=ROP(l)
+print(r.rbx)
+
+print(xor(xor("A","B"), "A"))
+print(b64e(b"test"))
+print(b64d (b"dGVzdA=="))
+print(md5sumhex(b"hello"))
+print(sha1sumhex(b"hello"))
+
+print(bits(b'a'))
+print(unbits([0,1,1,0,0,0,0,1]))
+
+
+'''p32() and u32(): Handle packing/unpacking of 32-bit integers into bytes.
+ELF(): Loads an ELF binary for analysis.
+got and plt: Reference entries in the Global Offset Table and Procedure Linkage Table.
+asm(): Converts assembly code to machine code.
+ROP(): Creates ROP chains from the binary.
+xor(): Performs XOR operations on characters/bytes.
+b64e() and b64d(): Encode/decode Base64.
+md5sumhex() and sha1sumhex(): Compute MD5 and SHA1 hashes.
+bits() and unbits(): Convert bytes to bits and vice versa.'''
+
 
 #3rd Sept - Sys 
 import sys
@@ -62,7 +137,7 @@ print("{} {}".format(username,password))
 
 sys.exit(0)
 
-#print(sys.path) #python will search for modules to be installed 
+#print(sys.path) #python will search for modules in that specific directory
 #print(sys.modules) #modulés that are already installed 
 
 
